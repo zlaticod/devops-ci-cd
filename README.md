@@ -75,8 +75,28 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run test`            | Run tests with Vitest                            |
+| `npm run test:watch`      | Run tests in watch mode                          |
+| `npm run test:ui`         | Open Vitest UI                                   |
+| `npm run typecheck`       | Check TypeScript types with Astro                |
+| `npm run validate`        | Run all checks + build (pre-deploy validation)   |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 🔄 CI/CD
+
+Този проект използва GitHub Actions за автоматизация:
+
+- **CI Pipeline** (`.github/workflows/ci.yml`) - TypeCheck, Test, Build
+- **Deploy Pipeline** (`.github/workflows/deploy.yml`) - Auto-deploy към GitHub Pages
+
+Виж пълната документация: http://localhost:4321/docs/ci-cd-setup
+
+### Validation Pipeline
+
+```bash
+npm run validate  # TypeCheck + Tests + Build
+```
 
 ## 👀 Want to learn more?
 
