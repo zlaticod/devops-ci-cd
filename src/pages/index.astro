@@ -1,11 +1,265 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Начало">
+	<div class="hero">
+		<div class="hero-content">
+			<h1 class="hero-title">
+				<span class="title-emoji">🚀</span>
+				DevOps Course
+			</h1>
+			<p class="hero-subtitle">
+				Добре дошли в документацията за DevOps курс в ТУ София
+			</p>
+			<div class="hero-buttons">
+				<a href="/docs" class="btn btn-primary">
+					📚 Разгледай документацията
+				</a>
+				<a href="#features" class="btn btn-secondary">
+					✨ Научи повече
+				</a>
+			</div>
+		</div>
+
+		<div class="hero-gradient"></div>
+	</div>
+
+	<section id="features" class="features">
+		<div class="container">
+			<h2 class="section-title">Какво ще намериш тук?</h2>
+			<div class="features-grid">
+				<div class="feature-card">
+					<div class="feature-icon">📖</div>
+					<h3>Документация</h3>
+					<p>Цялата учебна материя, лекции и ресурси на едно място в удобен markdown формат.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">🛠️</div>
+					<h3>Практически примери</h3>
+					<p>Code snippets и реални примери за DevOps инструменти и технологии.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">⚡</div>
+					<h3>Бърз достъп</h3>
+					<p>Лесно търсене и навигация през всички документи с помощта на Astro.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta">
+		<div class="container">
+			<h2>Готов да започнеш?</h2>
+			<p>Прегледай документацията и започни да учиш DevOps практики</p>
+			<a href="/docs" class="btn btn-large">
+				Отвори документацията →
+			</a>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 70vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 4rem 2rem;
+		overflow: hidden;
+	}
+
+	.hero-gradient {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 800px;
+		height: 800px;
+		background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+		pointer-events: none;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+		50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+	}
+
+	.hero-title {
+		font-size: 4rem;
+		font-weight: 800;
+		color: white;
+		margin-bottom: 1.5rem;
+		line-height: 1.1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.title-emoji {
+		font-size: 4.5rem;
+	}
+
+	.hero-subtitle {
+		font-size: 1.5rem;
+		color: #cbd5e1;
+		margin-bottom: 3rem;
+		line-height: 1.6;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.btn {
+		padding: 1rem 2rem;
+		border-radius: 0.75rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.125rem;
+		transition: all 0.3s ease;
+		display: inline-block;
+	}
+
+	.btn-primary {
+		background: linear-gradient(135deg, #3b82f6, #2563eb);
+		color: white;
+		box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+	}
+
+	.btn-primary:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+	}
+
+	.btn-secondary {
+		background: rgba(255, 255, 255, 0.1);
+		color: white;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(10px);
+	}
+
+	.btn-secondary:hover {
+		background: rgba(255, 255, 255, 0.15);
+		transform: translateY(-2px);
+	}
+
+	.features {
+		padding: 6rem 2rem;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: white;
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.feature-card {
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 1rem;
+		padding: 2.5rem;
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+
+	.feature-card:hover {
+		transform: translateY(-8px);
+		background: rgba(255, 255, 255, 0.08);
+		border-color: rgba(59, 130, 246, 0.5);
+		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+	}
+
+	.feature-icon {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.feature-card h3 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: white;
+		margin-bottom: 1rem;
+	}
+
+	.feature-card p {
+		color: #cbd5e1;
+		line-height: 1.6;
+	}
+
+	.cta {
+		padding: 6rem 2rem;
+		text-align: center;
+		background: rgba(59, 130, 246, 0.05);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.cta h2 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: white;
+		margin-bottom: 1rem;
+	}
+
+	.cta p {
+		font-size: 1.25rem;
+		color: #cbd5e1;
+		margin-bottom: 2rem;
+	}
+
+	.btn-large {
+		padding: 1.25rem 2.5rem;
+		font-size: 1.25rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero-title {
+			font-size: 2.5rem;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.title-emoji {
+			font-size: 3rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.125rem;
+		}
+
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.features-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
