@@ -68,10 +68,10 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Test the site
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} run validate \
+          ${{ steps.detect-package-manager.outputs.manager }} run validate \
       - name: Build with Astro
         run: |
-          ${{ steps.detect-package-manager.outputs.manager}} astro build \
+          ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
