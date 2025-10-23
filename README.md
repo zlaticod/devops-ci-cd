@@ -99,5 +99,9 @@ npm run validate  # TypeCheck + Tests + Build
 ```
 
 ## 👀 Want to learn more?
+###Status Badge
+[![CodeQL](https://github.com/zlaticod/devops-ci-cd/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/zlaticod/devops-ci-cd/actions/workflows/github-code-scanning/codeql)
+
+
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
